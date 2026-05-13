@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8f9fa;
+            background-color: #f0f2f5;
         }
 
         .container {
@@ -45,15 +45,15 @@
             opacity: 0.9;
         }
 
-        /* Profile Section - Layout com imagem JPEG ao lado */
+        /* Profile Section - Estrutura reformulada para evitar sobreposição */
         .profile-section {
             display: flex;
-            align-items: flex-start;
+            flex-wrap: wrap;
             gap: 2rem;
             background: white;
             border-radius: 16px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 1.8rem;
+            padding: 2rem;
             margin-bottom: 2rem;
             transition: transform 0.2s;
         }
@@ -65,26 +65,29 @@
         .profile-image {
             flex-shrink: 0;
             width: 200px;
-            border-radius: 16px;
+            height: 200px;
+            border-radius: 50%;
             overflow: hidden;
             border: 4px solid #fdbb4d;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin: 0 auto;
         }
 
         .profile-image img {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            object-fit: cover;
         }
 
         .profile-info {
             flex: 1;
+            min-width: 250px;
         }
 
         .profile-info h2 {
             border-left: 5px solid #fdbb4d;
             padding-left: 15px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             font-size: 1.8rem;
             color: #1a2a6c;
         }
@@ -117,19 +120,20 @@
 
         h3 {
             color: #b21f1f;
-            margin: 1rem 0 0.5rem;
+            margin: 1.2rem 0 0.6rem;
+            font-size: 1.3rem;
         }
 
-        /* Grid para imagens de viagem */
+        /* Grid para as imagens de viagem - Layout robusto sem sobreposição */
         .travel-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.5rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .travel-item {
-            background: #f1f3f5;
+            background: #f8f9fa;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -156,35 +160,35 @@
         .travel-caption {
             padding: 0.8rem;
             text-align: center;
-            font-size: 0.9rem;
             font-weight: 500;
             color: #1a2a6c;
             background: white;
+            border-top: 1px solid #eee;
         }
 
-        /* Contato */
+        /* Contato - Layout em grid flexível */
         .contact-info {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
-            justify-content: space-between;
             background: #e9ecef;
-            padding: 1rem;
+            padding: 1.2rem;
             border-radius: 12px;
             margin-top: 1rem;
         }
 
         .contact-item {
-            flex: 1;
-            min-width: 200px;
+            padding: 0.5rem;
+            word-break: break-word;
         }
 
         .contact-item strong {
             color: #1a2a6c;
             display: block;
+            margin-bottom: 0.2rem;
         }
 
-        /* Botões e links */
+        /* Links */
         a {
             color: #b21f1f;
             text-decoration: none;
@@ -196,37 +200,42 @@
             color: #fdbb4d;
         }
 
+        /* Badges e listas */
         .badge-list {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
-            margin-top: 0.8rem;
+            margin: 1rem 0 0.5rem;
         }
 
         .badge {
             background: #e9ecef;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
             font-size: 0.9rem;
             color: #1a2a6c;
         }
 
         .prize {
-            background: #fff3e0;
+            background: #fff8f0;
             border-left: 4px solid #fdbb4d;
-            padding: 0.8rem;
+            padding: 1rem;
             margin-bottom: 1rem;
             border-radius: 8px;
         }
 
-        /* Listas com espaçamento adequado */
-        .custom-list {
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
+        .prize strong {
+            color: #b21f1f;
+            font-size: 1.05rem;
         }
 
-        .custom-list li {
-            margin-bottom: 0.5rem;
+        /* Lista de viagens */
+        .travel-list {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .travel-list li {
+            margin-bottom: 0.3rem;
         }
 
         footer {
@@ -238,26 +247,45 @@
             border-radius: 20px 20px 0 0;
         }
 
-        /* Responsividade */
+        /* Responsividade - Garantindo que nada fique sobreposto */
         @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            .section-card { padding: 1.2rem; }
-            h2 { font-size: 1.5rem; }
-            .travel-grid { grid-template-columns: 1fr; }
-            .contact-info { flex-direction: column; }
+            header h1 { 
+                font-size: 2rem; 
+            }
+            .section-card { 
+                padding: 1.2rem; 
+            }
+            h2 { 
+                font-size: 1.5rem; 
+            }
+            .travel-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .contact-info { 
+                grid-template-columns: 1fr; 
+            }
             
             .profile-section {
                 flex-direction: column;
-                align-items: center;
                 text-align: center;
+                padding: 1.5rem;
             }
             
             .profile-image {
-                width: 180px;
+                width: 160px;
+                height: 160px;
             }
             
             .profile-info h2 {
                 text-align: center;
+                border-left: none;
+                border-bottom: 3px solid #fdbb4d;
+                padding-bottom: 8px;
+                display: inline-block;
+            }
+            
+            .badge-list {
+                justify-content: center;
             }
         }
     </style>
@@ -267,15 +295,15 @@
 <header>
     <div class="container">
         <h1>Fernando Siqueira Genta Maragni</h1>
-        <p>Estudante de Ciencia da Computacao</p>
+        <p>Estudante de Ciência da Computação</p>
     </div>
 </header>
 
 <div class="container">
-    <!-- SECAO DE PERFIL COM IMAGEM JPEG -->
+    <!-- SECAO DE PERFIL COM FOTO - Reformulada sem sobreposicao -->
     <div class="profile-section">
         <div class="profile-image">
-            <img src="./Portifolio Profissional-Bootcamp 1_files/WhatsApp Image 2026-04-12 at 16.00.33.jpeg" alt="Foto de Fernando Maragni">
+            <img src="./Portifólio Profissional-Bootcamp 1_files/WhatsApp Image 2026-04-12 at 16.00.33.jpeg" alt="Fernando Maragni - Foto de perfil">
         </div>
         <div class="profile-info">
             <h2>Informacoes Pessoais</h2>
@@ -290,26 +318,11 @@
     <div class="section-card">
         <h2>Informacoes profissionais</h2>
         <div class="contact-info">
-            <div class="contact-item">
-                <strong>Telefone</strong>
-                (61) 99112-9932
-            </div>
-            <div class="contact-item">
-                <strong>E-mail</strong>
-                <a href="mailto:maragnifernando@gmail.com">maragnifernando@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <strong>E-mail institucional</strong>
-                <a href="mailto:fernando.maragni@sempreceub.com">fernando.maragni@sempreceub.com</a>
-            </div>
-            <div class="contact-item">
-                <strong>GitHub</strong>
-                <a href="https://github.com/maragnifernando-create" target="_blank">maragnifernando-create</a>
-            </div>
-            <div class="contact-item">
-                <strong>LinkedIn</strong>
-                <a href="https://www.linkedin.com/in/fernando-maragni-21040b402" target="_blank">Fernando Maragni</a>
-            </div>
+            <div class="contact-item"><strong>Telefone</strong> (61) 99112-9932</div>
+            <div class="contact-item"><strong>E-mail</strong> <a href="mailto:maragnifernando@gmail.com">maragnifernando@gmail.com</a></div>
+            <div class="contact-item"><strong>E-mail institucional</strong> <a href="mailto:fernando.maragni@sempreceub.com">fernando.maragni@sempreceub.com</a></div>
+            <div class="contact-item"><strong>GitHub</strong> <a href="https://github.com/maragnifernando-create" target="_blank">maragnifernando-create</a></div>
+            <div class="contact-item"><strong>LinkedIn</strong> <a href="https://www.linkedin.com/in/fernando-maragni-21040b402" target="_blank">Fernando Maragni</a></div>
         </div>
     </div>
 
@@ -328,10 +341,10 @@
         <p><strong>Resumo:</strong> Estudante do Primeiro Semestre de Ciencia da Computacao, com interesse na criacao de sites e jogos. Estou fazendo minha primeira graduacao.</p>
         
         <h3>Formacao Academica</h3>
-        <p><strong>Colegio Ciman Octogonal</strong> – Ensino Medio (2023-2025)</p>
-        <p>Estudei no Colegio Ciman quase a vida toda, tendo iniciado o Ensino Medio em 2023 e terminado em 2025.</p>
-        <p><strong>Cooplem Idiomas</strong> – Ingles (2019-2024)</p>
-        <p>Curso completo de ingles, focado em conversacao e leitura.</p>
+        <p><strong>Colegio Ciman Octogonal</strong> – Ensino Medio (2023-2025)<br>
+        Estudei no Colegio Ciman quase a vida toda, tendo iniciado o Ensino Medio em 2023 e terminado em 2025.</p>
+        <p><strong>Cooplem Idiomas</strong> – Ingles (2019-2024)<br>
+        Curso completo de ingles, focado em conversacao e leitura.</p>
         
         <h3>Competencias</h3>
         <div class="badge-list">
@@ -355,67 +368,67 @@
     <div class="section-card">
         <h2>Premios</h2>
         <div class="prize">
-            <strong>Medalha de Prata</strong>
+            <strong>Medalha de Prata</strong><br>
             Olimpiada Brasileira de Astronomia e Astronautica - 2022
         </div>
         <div class="prize">
-            <strong>Medalha de Bronze</strong>
+            <strong>Medalha de Bronze</strong><br>
             Olimpiada Brasileira do Saber - 2025
         </div>
     </div>
 
-    <!-- Viagens – GRID com todas as imagens JPG -->
+    <!-- Viagens – GRID com TODAS as imagens fornecidas (unnamed 1 a 10) -->
     <div class="section-card">
         <h2>Viagens</h2>
         <p><strong>Experiencias pessoais:</strong></p>
-        <ul class="custom-list">
+        <ul class="travel-list">
             <li>Quatro viagens aos EUA (Los Angeles, Las Vegas, Miami, Orlando)</li>
             <li>Jogos de basquete, futebol americano, hoquei</li>
             <li>Parques Universal e Disney, Observatorio Griffith, California Science Center</li>
             <li>Jogos de futebol ao vivo: selecao brasileira, Palmeiras, Copa 2014</li>
             <li>Laboratorios cientificos no ensino medio (disseccao de lula, etc.)</li>
         </ul>
-        <p><strong>Fotos:</strong></p>
+        <p><strong>Fotos das viagens:</strong></p>
         <div class="travel-grid">
             <div class="travel-item">
-                <img src="./Portifolio Profissional-Bootcamp 1_files/unnamed(1).jpg" alt="Viagem 1">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(1).jpg" alt="Viagem 1 - Museu de Carros">
                 <div class="travel-caption">Museu de Carros</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifolio Profissional-Bootcamp 1_files/unnamed(2).jpg" alt="Viagem 2">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(2).jpg" alt="Viagem 2 - Museu de Carros">
                 <div class="travel-caption">Museu de Carros</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifolio Profissional-Bootcamp 1_files/unnamed(3).jpg" alt="Viagem 3">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(3).jpg" alt="Viagem 3 - Museu de Carros">
                 <div class="travel-caption">Museu de Carros</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifolio Profissional-Bootcamp 1_files/unnamed(4).jpg" alt="Viagem 4">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(4).jpg" alt="Viagem 4 - Museu de Carros">
                 <div class="travel-caption">Museu de Carros</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifolio Profissional-Bootcamp 1_files/unnamed(5).jpg" alt="Viagem 5">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(5).jpg" alt="Viagem 5 - Museu de Carros">
+                <div class="travel-caption">Museu de Carros</div>
+            </div>
+            <div class="travel-item">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(6).jpg" alt="Viagem 6 - Museu de Carros">
+                <div class="travel-caption">Museu de Carros</div>
+            </div>
+            <div class="travel-item">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(7).jpg" alt="Viagem 7 - Jogo de Basquete">
                 <div class="travel-caption">Jogo de Basquete</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifolio Profissional-Bootcamp 1_files/unnamed(6).jpg" alt="Viagem 6">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(8).jpg" alt="Viagem 8 - Observatorio Griffith">
                 <div class="travel-caption">Observatorio Griffith</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifolio Profissional-Bootcamp 1_files/unnamed(7).jpg" alt="Viagem 7">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(9).jpg" alt="Viagem 9 - California Science Center">
                 <div class="travel-caption">California Science Center</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifolio Profissional-Bootcamp 1_files/unnamed(8).jpg" alt="Viagem 8">
-                <div class="travel-caption">Paisagem</div>
-            </div>
-            <div class="travel-item">
-                <img src="./Portifolio Profissional-Bootcamp 1_files/unnamed(9).jpg" alt="Viagem 9">
-                <div class="travel-caption">Cidade</div>
-            </div>
-            <div class="travel-item">
-                <img src="./Portifolio Profissional-Bootcamp 1_files/unnamed(10).jpg" alt="Viagem 10">
-                <div class="travel-caption">Outra paisagem</div>
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(10).jpg" alt="Viagem 10 - California Science Center">
+                <div class="travel-caption">California Science Center</div>
             </div>
         </div>
     </div>
@@ -424,14 +437,14 @@
     <div class="section-card">
         <h2>Habilidades em Desenvolvimento</h2>
         <p>Estou aprendendo a programar em Python na materia de logica de programacao e tentando aprender sozinho a programar em C#.</p>
-        <p>Além de aprender a falar alemao no Duolingo.</p>
+        <p>Ale do de aprender a falar alemao no Duolingo.</p>
         <p>Quero tambem futuramente aprender a usar Blender, Unity e aprender a programar em C++.</p>
     </div>
 </div>
 
 <footer>
     <p>Portfolio Profissional - Fernando Maragni | Bootcamp de Desenvolvimento</p>
-    <p>&copy; 2025 - Atualizado com organizacao profissional</p>
+    <p>2025 - Atualizado com organizacao profissional</p>
 </footer>
 
 </body>
