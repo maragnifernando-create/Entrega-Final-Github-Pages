@@ -1,322 +1,386 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernando Maragni - Portfólio Profissional</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Fernando Maragni | Portfólio Profissional</title>
+  <style>
+    /* ===== RESET E ESTILOS GLOBAIS ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #2c3e50;
+      background-color: #f4f7f6;
+      padding: 0 1rem;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      background-color: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 2rem;
+    }
 
-        /* Cabeçalho */
-        header {
-            background: linear-gradient(135deg, #2079c7 0%, #155a8a 100%);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
+    /* ===== TIPOGRAFIA ===== */
+    h1 {
+      font-size: 2.5rem;
+      color: #1a5f7a;
+      margin-bottom: 0.25rem;
+      border-left: 6px solid #2c9cd4;
+      padding-left: 1rem;
+    }
 
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+    h2 {
+      font-size: 1.8rem;
+      color: #1a5f7a;
+      margin-top: 2rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 3px solid #e2ece9;
+      padding-bottom: 0.5rem;
+    }
 
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
+    h3 {
+      font-size: 1.3rem;
+      color: #2c3e50;
+      margin: 1rem 0 0.5rem;
+    }
 
-        /* Cards */
-        .card {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    .subtitulo {
+      font-size: 1.2rem;
+      color: #4a6a7f;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      padding-left: 1.5rem;
+    }
 
-        .card h2 {
-            color: #2079c7;
-            border-bottom: 2px solid #2079c7;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
+    /* ===== CARDS E INFORMAÇÕES ===== */
+    .info-card {
+      background: #eef2f5;
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
 
-        .card h3 {
-            color: #155a8a;
-            margin: 15px 0 10px 0;
-        }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      background: white;
+      padding: 0.75rem 1rem;
+      border-radius: 40px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
 
-        /* Contato */
-        .contato-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
+    .info-item .emoji {
+      font-size: 1.4rem;
+    }
 
-        .contato-item {
-            background: #e8f4f8;
-            padding: 12px;
-            border-radius: 8px;
-            word-break: break-all;
-        }
+    /* ===== SKILLS E BADGES ===== */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
 
-        .contato-item a {
-            color: #2079c7;
-            text-decoration: none;
-        }
+    .skill-badge {
+      background-color: #e2ece9;
+      color: #1a5f7a;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
 
-        .contato-item a:hover {
-            text-decoration: underline;
-        }
+    .idiomas-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
 
-        /* Habilidades */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
+    .idioma {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 0.75rem 1.5rem;
+      text-align: center;
+      flex: 1 1 auto;
+      border: 1px solid #dce5e2;
+    }
+    .idioma strong {
+      color: #1a5f7a;
+      display: block;
+    }
 
-        .skill-tag {
-            background: #2079c7;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
+    /* ===== PRÊMIOS EM CARDS ===== */
+    .premios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
 
-        /* Grid de imagens de viagem */
-        .viagens-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
+    .premio-card {
+      background: #f8fafc;
+      border-radius: 20px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid #e2ece9;
+    }
+    .premio-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.1);
+    }
+    .medalha {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .premio-card h3 {
+      margin-top: 0;
+      font-size: 1.25rem;
+    }
+    .premio-card p {
+      color: #4a6a7f;
+      font-size: 0.9rem;
+    }
 
-        .viagem-card {
-            background: #f9f9f9;
-            border-radius: 8px;
-            overflow: hidden;
-            text-align: center;
-            padding: 15px;
-        }
+    /* ===== GALERIA DE VIAGENS (UMA DO LADO DA OUTRA) ===== */
+    .viagens-galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
 
-        .viagem-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
+    .card-viagem {
+      background: #f8fafc;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    .card-viagem:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
+    }
+    /* IMPORTANTE: as imagens originais não são alteradas, apenas estilizadas */
+    .card-viagem img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .card-viagem:hover img {
+      transform: scale(1.02);
+    }
+    .card-viagem .legenda {
+      padding: 1rem;
+    }
+    .card-viagem .cidade {
+      font-weight: 700;
+      color: #1a5f7a;
+      font-size: 1.1rem;
+    }
+    .card-viagem .local {
+      font-size: 0.85rem;
+      color: #5f7f8f;
+    }
 
-        .placeholder-img {
-            background: #ddd;
-            width: 100%;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            border-radius: 8px;
-        }
+    /* ===== EXPERIÊNCIAS E FORMATAÇÃO GERAL ===== */
+    .experiencia-texto {
+      background-color: #fefce8;
+      padding: 1.2rem;
+      border-radius: 20px;
+      margin: 1rem 0;
+      border-left: 5px solid #f5b042;
+    }
+    .formacao-item {
+      margin-bottom: 1.5rem;
+    }
+    .ano {
+      font-weight: 600;
+      color: #2c9cd4;
+      margin-bottom: 0.25rem;
+    }
 
-        /* Prêmios */
-        .premio {
-            background: #f0f7fc;
-            padding: 15px;
-            margin: 10px 0;
-            border-left: 4px solid #ffd700;
-            border-radius: 5px;
-        }
+    hr {
+      margin: 2rem 0;
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg, #cbdad6, transparent);
+    }
 
-        .premio-prata {
-            border-left-color: #c0c0c0;
-        }
+    footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #7a9aa8;
+    }
 
-        .premio-bronze {
-            border-left-color: #cd7f32;
-        }
-
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            border-top: 1px solid #ddd;
-            margin-top: 30px;
-        }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 1.8em; }
-            .container { padding: 15px; }
-        }
-    </style>
+    /* RESPONSIVO */
+    @media (max-width: 700px) {
+      .container {
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🚀 Fernando Maragni</h1>
-            <p>Estudante de Ciência da Computação | Desenvolvedor em formação</p>
-        </header>
+<div class="container">
+  
+  <!-- CABEÇALHO -->
+  <h1>🚀 Fernando Maragni</h1>
+  <div class="subtitulo">Estudante de Ciência da Computação | Desenvolvedor em formação</div>
 
-        <!-- Contato -->
-        <div class="card">
-            <h2>📞 Informações Profissionais</h2>
-            <div class="contato-grid">
-                <div class="contato-item">📱 Telefone: (61) 99112-9932</div>
-                <div class="contato-item">📧 Email: maragnifernando@gmail.com</div>
-                <div class="contato-item">🏫 Email institucional: fernando.maragni@sempreceub.com</div>
-                <div class="contato-item">💻 GitHub: <a href="https://github.com/maragnifernando-create">github.com/maragnifernando-create</a></div>
-                <div class="contato-item">🔗 LinkedIn: <a href="https://www.linkedin.com/in/fernando-maragni-21040b402">linkedin.com/in/fernando-maragni-21040b402</a></div>
-            </div>
-        </div>
+  <!-- INFORMAÇÕES DE CONTATO (ORGANIZADO) -->
+  <div class="info-card">
+    <div class="info-item"><span class="emoji">📱</span> (61) 99112-9932</div>
+    <div class="info-item"><span class="emoji">📧</span> maragnifernando@gmail.com</div>
+    <div class="info-item"><span class="emoji">🏫</span> fernando.maragni@sempreceub.com</div>
+    <div class="info-item"><span class="emoji">💻</span> github.com/maragnifernando-create</div>
+    <div class="info-item"><span class="emoji">🔗</span> linkedin.com/in/fernando-maragni-21040b402</div>
+  </div>
 
-        <!-- Sobre Mim -->
-        <div class="card">
-            <h2>👨‍💻 Sobre Mim</h2>
-            <p>Sou muito interessado na área de tecnologia, em especial na criação e no desenvolvimento de sites e jogos.</p>
-            <p>Gosto de matemática e de resolver problemas de exatas.</p>
-            <p>Gosto de assistir jogos de futebol e torneios de e-sports de jogos de estratégia e mobas.</p>
-            <p>Como outros hobbies, gosto de tentar fazer 100% dos jogos que estou interessado em jogar.</p>
-        </div>
+  <!-- SOBRE MIM (MAIS LIMPO) -->
+  <h2>👨‍💻 Sobre Mim</h2>
+  <p>Sou muito interessado na área de tecnologia, em especial na criação e desenvolvimento de sites e jogos. Gosto de matemática e de resolver problemas de exatas. Nos momentos livres, curto assistir jogos de futebol, torneios de e-sports de jogos de estratégia e MOBAs, e também tentar zerar 100% dos jogos que me interessam.</p>
 
-        <!-- Resumo -->
-        <div class="card">
-            <h2>📚 Resumo Profissional</h2>
-            <p>Estudante do Primeiro Semestre de Ciência da Computação, com interesse na criação de sites e jogos. Estou fazendo minha primeira graduação.</p>
-        </div>
+  <!-- RESUMO PROFISSIONAL -->
+  <h2>📚 Resumo Profissional</h2>
+  <div class="experiencia-texto">
+    Estudante do Primeiro Semestre de Ciência da Computação, com interesse em desenvolvimento web e criação de jogos. Busco sempre aprender mais e contribuir com projetos em equipe.
+  </div>
 
-        <!-- Experiências Pessoais -->
-        <div class="card">
-            <h2>✈️ Experiências Pessoais</h2>
-            <p>Fiz quatro viagens para os Estados Unidos, explorando as diversas experiências de Los Angeles, Las Vegas, Miami e Orlando, dentre elas:</p>
-            <ul style="margin: 15px 0 0 25px;">
-                <li>Assisti jogos de basquete, futebol americano e hóquei</li>
-                <li>Visitei os parques da Universal e da Disney</li>
-                <li>Visitei Hollywood e observei estúdios de cinema (Warner, Nickelodeon)</li>
-                <li>Passei pela Calçada da Fama</li>
-                <li>Fui ao Observatório do Griffith</li>
-                <li>Visitei o California Science Center</li>
-            </ul>
-            <p style="margin-top: 15px;">Fui para jogos de futebol ao vivo da seleção brasileira, do Palmeiras e de alguns jogos da Copa de 2014.</p>
-            <p>Participei de laboratórios científicos no meu ensino médio, analisando na prática os conteúdos, como a estrutura interna de uma lula.</p>
-        </div>
+  <!-- EXPERIÊNCIAS PESSOAIS -->
+  <h2>✈️ Experiências Pessoais</h2>
+  <p>Quatro viagens aos Estados Unidos (Los Angeles, Las Vegas, Miami e Orlando) me proporcionaram vivências únicas:</p>
+  <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+    <li>Jogos de basquete, futebol americano e hóquei</li>
+    <li>Parques Universal e Disney</li>
+    <li>Hollywood, Calçada da Fama e estúdios Warner/Nickelodeon</li>
+    <li>Observatório Griffith e California Science Center</li>
+  </ul>
+  <p>Também acompanhei jogos de futebol da seleção brasileira, Palmeiras e alguns da Copa 2014. Participei de laboratórios científicos no ensino médio, analisando desde a estrutura de uma lula até experimentos práticos.</p>
 
-        <!-- Formação -->
-        <div class="card">
-            <h2>🎓 Formação</h2>
-            <h3>Colégio Ciman Octogonal, Brasília — Ensino Médio</h3>
-            <p><small>2023 - 2025</small></p>
-            <p>Estudei no Colégio Ciman quase minha vida toda, tendo iniciado o Ensino Médio em 2023 e terminado em 2025.</p>
-            
-            <h3 style="margin-top: 20px;">Cooplem Idiomas, Brasília — Inglês</h3>
-            <p><small>2019 - 2024</small></p>
-            <p>Curso completo de inglês, focando em locução e leitura.</p>
-        </div>
+  <!-- FORMAÇÃO -->
+  <h2>🎓 Formação</h2>
+  <div class="formacao-item">
+    <div class="ano">2023 – 2025</div>
+    <strong>Colégio Ciman Octogonal, Brasília</strong> — Ensino Médio
+  </div>
+  <div class="formacao-item">
+    <div class="ano">2019 – 2024</div>
+    <strong>Cooplem Idiomas, Brasília</strong> — Inglês (Avançado)
+  </div>
 
-        <!-- Competências -->
-        <div class="card">
-            <h2>⚡ Competências</h2>
-            <div class="skills">
-                <span class="skill-tag">Trabalho em equipe</span>
-                <span class="skill-tag">Ouvinte ativo</span>
-                <span class="skill-tag">Organização</span>
-                <span class="skill-tag">Proatividade</span>
-                <span class="skill-tag">Python (Básico)</span>
-                <span class="skill-tag">C# (Básico)</span>
-            </div>
-            <p style="margin-top: 15px;">Tenho desejo de sempre aprender mais na área de tecnologia.</p>
-        </div>
+  <!-- COMPETÊNCIAS -->
+  <h2>⚡ Competências</h2>
+  <div class="skills-list">
+    <span class="skill-badge">Trabalho em equipe</span>
+    <span class="skill-badge">Comunicação</span>
+    <span class="skill-badge">Organização</span>
+    <span class="skill-badge">Proatividade</span>
+    <span class="skill-badge">Python (Básico)</span>
+    <span class="skill-badge">C# (Básico)</span>
+    <span class="skill-badge">Desejo de aprender</span>
+  </div>
 
-        <!-- Idiomas -->
-        <div class="card">
-            <h2>🌎 Idiomas</h2>
-            <div class="skills">
-                <span class="skill-tag">Português (Nativo)</span>
-                <span class="skill-tag">Inglês (Avançado)</span>
-                <span class="skill-tag">Alemão (Básico - Duolingo)</span>
-            </div>
-        </div>
+  <!-- IDIOMAS -->
+  <h2>🌎 Idiomas</h2>
+  <div class="idiomas-grid">
+    <div class="idioma"><strong>Português</strong> Nativo</div>
+    <div class="idioma"><strong>Inglês</strong> Avançado</div>
+    <div class="idioma"><strong>Alemão</strong> Básico (Duolingo)</div>
+  </div>
 
-        <!-- Prêmios -->
-        <div class="card">
-            <h2>🏆 Prêmios e Reconhecimentos</h2>
-            <div class="premio premio-prata">
-                <strong>🥈 Olimpíada Brasileira de Astronomia e Astronáutica 2022</strong><br>
-                Medalha de Prata
-            </div>
-            <div class="premio premio-bronze">
-                <strong>🥉 Olimpíada Brasileira do Saber 2025</strong><br>
-                Medalha de Bronze
-            </div>
-        </div>
-
-        <!-- Habilidades em Desenvolvimento -->
-        <div class="card">
-            <h2>📖 Habilidades em Desenvolvimento</h2>
-            <p>• Aprendendo Python na disciplina de lógica de programação</p>
-            <p>• Estudando C# de forma autodidata</p>
-            <p>• Aprendendo Alemão no Duolingo</p>
-            <p>• Futuramente: Blender, Unity e C++</p>
-        </div>
-
-        <!-- Viagens - Galeria de Fotos (lado a lado) -->
-        <div class="card">
-            <h2>📸 Galeria de Viagens</h2>
-            <div class="viagens-grid">
-                <div class="viagem-card">
-                    <div class="placeholder-img">📍 Los Angeles</div>
-                    <p><small>Hollywood, Califórnia</small></p>
-                </div>
-                <div class="viagem-card">
-                    <div class="placeholder-img">🎢 Orlando</div>
-                    <p><small>Parques Universal e Disney</small></p>
-                </div>
-                <div class="viagem-card">
-                    <div class="placeholder-img">🎲 Las Vegas</div>
-                    <p><small>Entretenimento e shows</small></p>
-                </div>
-                <div class="viagem-card">
-                    <div class="placeholder-img">🏖️ Miami</div>
-                    <p><small>Praias e cultura</small></p>
-                </div>
-            </div>
-            <p style="text-align: center; margin-top: 15px; color: #666;"><small>⭐ Quatro viagens aos Estados Unidos explorando diferentes cidades ⭐</small></p>
-        </div>
-
-        <!-- Localizador de Imagens (README explicativo) -->
-        <div class="card">
-            <h2>🖼️ Sobre as Imagens do Site</h2>
-            <p>Atualmente, as imagens de viagem estão representadas por placeholders. Para adicionar suas fotos reais:</p>
-            <ol style="margin: 15px 0 0 25px;">
-                <li>Coloque suas fotos na pasta <code>imagens/</code> do repositório</li>
-                <li>Substitua os placeholders por: <code>&lt;img src="imagens/sua-foto.jpg" alt="Descrição"&gt;</code></li>
-                <li>Consulte o arquivo <strong>README.md</strong> no repositório para instruções detalhadas</li>
-            </ol>
-        </div>
-
-        <footer>
-            <p>Portfólio Profissional - Bootcamp de Ciência da Computação</p>
-            <p>Última atualização: Maio/2026</p>
-        </footer>
+  <!-- PRÊMIOS (CARDS LADO A LADO) -->
+  <h2>🏆 Prêmios e Reconhecimentos</h2>
+  <div class="premios-grid">
+    <div class="premio-card">
+      <span class="medalha">🥈</span>
+      <h3>Olimpíada Brasileira de Astronomia e Astronáutica</h3>
+      <p>2022 • Medalha de Prata</p>
     </div>
+    <div class="premio-card">
+      <span class="medalha">🥉</span>
+      <h3>Olimpíada Brasileira do Saber</h3>
+      <p>2025 • Medalha de Bronze</p>
+    </div>
+  </div>
+
+  <!-- HABILIDADES EM DESENVOLVIMENTO -->
+  <h2>📖 Habilidades em Desenvolvimento</h2>
+  <div class="skills-list">
+    <span class="skill-badge">Python (Lógica)</span>
+    <span class="skill-badge">C# (Autodidata)</span>
+    <span class="skill-badge">Alemão (Duolingo)</span>
+    <span class="skill-badge">Blender (Futuro)</span>
+    <span class="skill-badge">Unity (Futuro)</span>
+    <span class="skill-badge">C++ (Futuro)</span>
+  </div>
+
+  <!-- GALERIA DE VIAGENS - IMAGENS UMA DO LADO DA OUTRA SEM ALTERAR ARQUIVOS -->
+  <h2>📸 Galeria de Viagens</h2>
+  <div class="viagens-galeria">
+    <div class="card-viagem">
+      <img src="https://placehold.co/400x250/eef2f5/2c3e50?text=Los+Angeles" alt="Los Angeles">
+      <div class="legenda">
+        <div class="cidade">🇺🇸 Los Angeles</div>
+        <div class="local">Hollywood, Califórnia</div>
+      </div>
+    </div>
+    <div class="card-viagem">
+      <img src="https://placehold.co/400x250/eef2f5/2c3e50?text=Orlando" alt="Orlando">
+      <div class="legenda">
+        <div class="cidade">🎢 Orlando</div>
+        <div class="local">Parques Universal e Disney</div>
+      </div>
+    </div>
+    <div class="card-viagem">
+      <img src="https://placehold.co/400x250/eef2f5/2c3e50?text=Las+Vegas" alt="Las Vegas">
+      <div class="legenda">
+        <div class="cidade">🎲 Las Vegas</div>
+        <div class="local">Entretenimento e shows</div>
+      </div>
+    </div>
+    <div class="card-viagem">
+      <img src="https://placehold.co/400x250/eef2f5/2c3e50?text=Miami" alt="Miami">
+      <div class="legenda">
+        <div class="cidade">🏖️ Miami</div>
+        <div class="local">Praias e cultura vibrante</div>
+      </div>
+    </div>
+  </div>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #5f7f8f;">⭐ Quatro viagens aos Estados Unidos explorando diferentes cidades ⭐</p>
+
+  <hr>
+  <footer>
+    Portfólio Profissional – Bootcamp | Última atualização: 2026<br>
+    As imagens da galeria são ilustrativas (placeholders). Basta substituir o <strong>src</strong> pelas suas fotos reais, sem precisar alterar o layout.
+  </footer>
+</div>
 </body>
 </html>
