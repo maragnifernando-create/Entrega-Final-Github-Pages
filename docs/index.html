@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernando Maragni | Portfólio Profissional</title>
+    <title>Fernando Maragni - Portfólio Profissional</title>
     <style>
         * {
             margin: 0;
@@ -15,21 +15,23 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f7fa;
+            background-color: #f5f5f5;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
 
         /* Cabeçalho */
         header {
-            background: linear-gradient(135deg, #1a5f7a, #0d3b4f);
+            background: linear-gradient(135deg, #2079c7 0%, #155a8a 100%);
             color: white;
-            padding: 60px 0;
             text-align: center;
+            padding: 50px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
         }
 
         header h1 {
@@ -42,34 +44,43 @@
             opacity: 0.9;
         }
 
-        /* Cards de contato */
-        .contato-card {
+        /* Cards */
+        .card {
             background: white;
             border-radius: 10px;
             padding: 25px;
-            margin: -40px 20px 30px 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #2079c7;
+            border-bottom: 2px solid #2079c7;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #155a8a;
+            margin: 15px 0 10px 0;
+        }
+
+        /* Contato */
+        .contato-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
         }
 
         .contato-item {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            padding: 10px;
-        }
-
-        .contato-item strong {
-            color: #1a5f7a;
-            display: block;
-            margin-bottom: 5px;
+            background: #e8f4f8;
+            padding: 12px;
+            border-radius: 8px;
+            word-break: break-all;
         }
 
         .contato-item a {
-            color: #0d3b4f;
+            color: #2079c7;
             text-decoration: none;
         }
 
@@ -77,183 +88,235 @@
             text-decoration: underline;
         }
 
-        /* Seções */
-        section {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        /* Habilidades */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
         }
 
-        h2 {
-            color: #1a5f7a;
-            border-left: 4px solid #1a5f7a;
-            padding-left: 15px;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+        .skill-tag {
+            background: #2079c7;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
         }
 
-        h3 {
-            color: #0d3b4f;
-            margin: 20px 0 10px 0;
-            font-size: 1.3em;
-        }
-
-        .grid-2 {
+        /* Grid de imagens de viagem */
+        .viagens-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        /* Listas */
-        ul {
-            list-style-position: inside;
-            margin: 15px 0;
+        .viagem-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding: 15px;
         }
 
-        li {
-            margin-bottom: 8px;
+        .viagem-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .placeholder-img {
+            background: #ddd;
+            width: 100%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            border-radius: 8px;
         }
 
         /* Prêmios */
         .premio {
-            background: #e8f4f8;
-            padding: 12px;
+            background: #f0f7fc;
+            padding: 15px;
             margin: 10px 0;
-            border-radius: 8px;
-            border-left: 3px solid #ffc107;
+            border-left: 4px solid #ffd700;
+            border-radius: 5px;
         }
 
-        .premio strong {
-            color: #1a5f7a;
+        .premio-prata {
+            border-left-color: #c0c0c0;
+        }
+
+        .premio-bronze {
+            border-left-color: #cd7f32;
         }
 
         /* Rodapé */
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 20px;
             color: #666;
-            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 30px;
         }
 
         @media (max-width: 768px) {
-            header {
-                padding: 40px 0;
-            }
-            section {
-                padding: 20px;
-            }
-            .contato-card {
-                margin-top: -20px;
-            }
+            header h1 { font-size: 1.8em; }
+            .container { padding: 15px; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Fernando Maragni</h1>
-            <p>Estudante de Ciência da Computação | Entusiasta de Tecnologia, Jogos e Inovação</p>
-        </div>
-    </header>
-
     <div class="container">
-        <!-- Cards de Contato -->
-        <div class="contato-card">
-            <div class="contato-item">
-                <strong>📞 Telefone</strong>
-                <span>(61) 99112-9932</span>
-            </div>
-            <div class="contato-item">
-                <strong>📧 E-mail</strong>
-                <a href="mailto:maragnifernando@gmail.com">maragnifernando@gmail.com</a>
-            </div>
-            <div class="contato-item">
-                <strong>💻 GitHub</strong>
-                <a href="https://github.com/maragnifernando-create" target="_blank">github.com/maragnifernando-create</a>
-            </div>
-            <div class="contato-item">
-                <strong>🔗 LinkedIn</strong>
-                <a href="https://www.linkedin.com/in/fernando-maragni-21040b402" target="_blank">fernando-maragni</a>
+        <header>
+            <h1>🚀 Fernando Maragni</h1>
+            <p>Estudante de Ciência da Computação | Desenvolvedor em formação</p>
+        </header>
+
+        <!-- Contato -->
+        <div class="card">
+            <h2>📞 Informações Profissionais</h2>
+            <div class="contato-grid">
+                <div class="contato-item">📱 Telefone: (61) 99112-9932</div>
+                <div class="contato-item">📧 Email: maragnifernando@gmail.com</div>
+                <div class="contato-item">🏫 Email institucional: fernando.maragni@sempreceub.com</div>
+                <div class="contato-item">💻 GitHub: <a href="https://github.com/maragnifernando-create">github.com/maragnifernando-create</a></div>
+                <div class="contato-item">🔗 LinkedIn: <a href="https://www.linkedin.com/in/fernando-maragni-21040b402">linkedin.com/in/fernando-maragni-21040b402</a></div>
             </div>
         </div>
 
         <!-- Sobre Mim -->
-        <section>
-            <h2>Sobre Mim</h2>
-            <p>Sou um estudante apaixonado por tecnologia, com foco no desenvolvimento de sites e jogos. Tenho facilidade com matemática e resolução de problemas complexos.</p>
-            <br>
-            <p>Além dos estudos, gosto de acompanhar futebol, torneios de e-sports (especialmente MOBAs e estratégia) e sou um jogador dedicado que busca completar 100% dos games que me interessam.</p>
-        </section>
+        <div class="card">
+            <h2>👨‍💻 Sobre Mim</h2>
+            <p>Sou muito interessado na área de tecnologia, em especial na criação e no desenvolvimento de sites e jogos.</p>
+            <p>Gosto de matemática e de resolver problemas de exatas.</p>
+            <p>Gosto de assistir jogos de futebol e torneios de e-sports de jogos de estratégia e mobas.</p>
+            <p>Como outros hobbies, gosto de tentar fazer 100% dos jogos que estou interessado em jogar.</p>
+        </div>
 
-        <div class="grid-2">
-            <!-- Formação -->
-            <section>
-                <h2>Formação</h2>
-                <h3>🎓 Ciência da Computação</h3>
-                <p>1º Semestre | Em andamento</p>
-
-                <h3>📚 Colégio Ciman Octogonal</h3>
-                <p>Ensino Médio | 2023 - 2025</p>
-
-                <h3>🌎 Cooplem Idiomas</h3>
-                <p>Inglês Avançado | 2019 - 2024</p>
-                <p>Curso completo com foco em conversação e leitura.</p>
-            </section>
-
-            <!-- Competências -->
-            <section>
-                <h2>Competências</h2>
-                <ul>
-                    <li>Trabalho em equipe e comunicação efetiva</li>
-                    <li>Python (Básico)</li>
-                    <li>C# (Básico)</li>
-                    <li>Proatividade e aprendizado contínuo</li>
-                    <li>Inglês Avançado</li>
-                    <li>Alemão (Básico - Duolingo)</li>
-                </ul>
-            </section>
+        <!-- Resumo -->
+        <div class="card">
+            <h2>📚 Resumo Profissional</h2>
+            <p>Estudante do Primeiro Semestre de Ciência da Computação, com interesse na criação de sites e jogos. Estou fazendo minha primeira graduação.</p>
         </div>
 
         <!-- Experiências Pessoais -->
-        <section>
-            <h2>Experiências Pessoais</h2>
-            <p><strong>🌍 Viagens Internacionais:</strong> Quatro viagens aos Estados Unidos (Los Angeles, Las Vegas, Miami, Orlando). Experiências incluem assistir jogos da NBA, NHL e NFL, visitar parques da Universal/Disney, conhecer Hollywood e o California Science Center.</p>
-            <br>
-            <p><strong>⚽ Esportes:</strong> Presenciei jogos da Seleção Brasileira, Palmeiras e partidas da Copa do Mundo de 2014.</p>
-            <br>
-            <p><strong>🔬 Laboratórios Científicos:</strong> Participação ativa em experimentos práticos durante o ensino médio, como análises da estrutura de organismos marinhos.</p>
-        </section>
+        <div class="card">
+            <h2>✈️ Experiências Pessoais</h2>
+            <p>Fiz quatro viagens para os Estados Unidos, explorando as diversas experiências de Los Angeles, Las Vegas, Miami e Orlando, dentre elas:</p>
+            <ul style="margin: 15px 0 0 25px;">
+                <li>Assisti jogos de basquete, futebol americano e hóquei</li>
+                <li>Visitei os parques da Universal e da Disney</li>
+                <li>Visitei Hollywood e observei estúdios de cinema (Warner, Nickelodeon)</li>
+                <li>Passei pela Calçada da Fama</li>
+                <li>Fui ao Observatório do Griffith</li>
+                <li>Visitei o California Science Center</li>
+            </ul>
+            <p style="margin-top: 15px;">Fui para jogos de futebol ao vivo da seleção brasileira, do Palmeiras e de alguns jogos da Copa de 2014.</p>
+            <p>Participei de laboratórios científicos no meu ensino médio, analisando na prática os conteúdos, como a estrutura interna de uma lula.</p>
+        </div>
+
+        <!-- Formação -->
+        <div class="card">
+            <h2>🎓 Formação</h2>
+            <h3>Colégio Ciman Octogonal, Brasília — Ensino Médio</h3>
+            <p><small>2023 - 2025</small></p>
+            <p>Estudei no Colégio Ciman quase minha vida toda, tendo iniciado o Ensino Médio em 2023 e terminado em 2025.</p>
+            
+            <h3 style="margin-top: 20px;">Cooplem Idiomas, Brasília — Inglês</h3>
+            <p><small>2019 - 2024</small></p>
+            <p>Curso completo de inglês, focando em locução e leitura.</p>
+        </div>
+
+        <!-- Competências -->
+        <div class="card">
+            <h2>⚡ Competências</h2>
+            <div class="skills">
+                <span class="skill-tag">Trabalho em equipe</span>
+                <span class="skill-tag">Ouvinte ativo</span>
+                <span class="skill-tag">Organização</span>
+                <span class="skill-tag">Proatividade</span>
+                <span class="skill-tag">Python (Básico)</span>
+                <span class="skill-tag">C# (Básico)</span>
+            </div>
+            <p style="margin-top: 15px;">Tenho desejo de sempre aprender mais na área de tecnologia.</p>
+        </div>
+
+        <!-- Idiomas -->
+        <div class="card">
+            <h2>🌎 Idiomas</h2>
+            <div class="skills">
+                <span class="skill-tag">Português (Nativo)</span>
+                <span class="skill-tag">Inglês (Avançado)</span>
+                <span class="skill-tag">Alemão (Básico - Duolingo)</span>
+            </div>
+        </div>
 
         <!-- Prêmios -->
-        <section>
-            <h2>Prêmios e Reconhecimentos</h2>
-            <div class="premio">
-                <strong>🏅 Olimpíada Brasileira de Astronomia e Astronáutica - 2022</strong><br>
+        <div class="card">
+            <h2>🏆 Prêmios e Reconhecimentos</h2>
+            <div class="premio premio-prata">
+                <strong>🥈 Olimpíada Brasileira de Astronomia e Astronáutica 2022</strong><br>
                 Medalha de Prata
             </div>
-            <div class="premio">
-                <strong>🏅 Olimpíada Brasileira do Saber - 2025</strong><br>
+            <div class="premio premio-bronze">
+                <strong>🥉 Olimpíada Brasileira do Saber 2025</strong><br>
                 Medalha de Bronze
             </div>
-        </section>
+        </div>
 
         <!-- Habilidades em Desenvolvimento -->
-        <section>
-            <h2>Habilidades em Desenvolvimento</h2>
-            <ul>
-                <li>Aprofundamento em Python e lógica de programação</li>
-                <li>Estudos autônomos em C#</li>
-                <li>Alemão (em andamento - Duolingo)</li>
-                <li>Pretendo aprender: Blender, Unity e C++</li>
-            </ul>
-        </section>
-    </div>
+        <div class="card">
+            <h2>📖 Habilidades em Desenvolvimento</h2>
+            <p>• Aprendendo Python na disciplina de lógica de programação</p>
+            <p>• Estudando C# de forma autodidata</p>
+            <p>• Aprendendo Alemão no Duolingo</p>
+            <p>• Futuramente: Blender, Unity e C++</p>
+        </div>
 
-    <footer>
-        <p>Portfólio Profissional - Bootcamp | Fernando Maragni</p>
-        <p>Última atualização: Maio/2026</p>
-    </footer>
+        <!-- Viagens - Galeria de Fotos (lado a lado) -->
+        <div class="card">
+            <h2>📸 Galeria de Viagens</h2>
+            <div class="viagens-grid">
+                <div class="viagem-card">
+                    <div class="placeholder-img">📍 Los Angeles</div>
+                    <p><small>Hollywood, Califórnia</small></p>
+                </div>
+                <div class="viagem-card">
+                    <div class="placeholder-img">🎢 Orlando</div>
+                    <p><small>Parques Universal e Disney</small></p>
+                </div>
+                <div class="viagem-card">
+                    <div class="placeholder-img">🎲 Las Vegas</div>
+                    <p><small>Entretenimento e shows</small></p>
+                </div>
+                <div class="viagem-card">
+                    <div class="placeholder-img">🏖️ Miami</div>
+                    <p><small>Praias e cultura</small></p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 15px; color: #666;"><small>⭐ Quatro viagens aos Estados Unidos explorando diferentes cidades ⭐</small></p>
+        </div>
+
+        <!-- Localizador de Imagens (README explicativo) -->
+        <div class="card">
+            <h2>🖼️ Sobre as Imagens do Site</h2>
+            <p>Atualmente, as imagens de viagem estão representadas por placeholders. Para adicionar suas fotos reais:</p>
+            <ol style="margin: 15px 0 0 25px;">
+                <li>Coloque suas fotos na pasta <code>imagens/</code> do repositório</li>
+                <li>Substitua os placeholders por: <code>&lt;img src="imagens/sua-foto.jpg" alt="Descrição"&gt;</code></li>
+                <li>Consulte o arquivo <strong>README.md</strong> no repositório para instruções detalhadas</li>
+            </ol>
+        </div>
+
+        <footer>
+            <p>Portfólio Profissional - Bootcamp de Ciência da Computação</p>
+            <p>Última atualização: Maio/2026</p>
+        </footer>
+    </div>
 </body>
 </html>
