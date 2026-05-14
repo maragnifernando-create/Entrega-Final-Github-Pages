@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Fernando Siqueira Genta Maragni | Portfólio Profissional</title>
+    <title>Fernando Maragni | Portfólio Profissional</title>
     <style>
         * {
             margin: 0;
@@ -14,14 +14,14 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            color: #2d3748;
+            background-color: #f7fafc;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         /* Header */
@@ -30,30 +30,32 @@
             color: white;
             text-align: center;
             padding: 3rem 1rem;
-            border-radius: 0 0 20px 20px;
-            margin-bottom: 2rem;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 15px -5px rgba(0,0,0,0.1);
         }
 
         header h1 {
             font-size: 2.8rem;
             margin-bottom: 0.5rem;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            font-weight: 600;
         }
 
         header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            opacity: 0.95;
         }
 
-        /* Profile Section - Novo estilo para foto + informações */
+        /* Profile Section - Foto + Informações lado a lado */
         .profile-section {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 2.5rem;
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 1.8rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            padding: 2rem;
             margin-bottom: 2rem;
             transition: transform 0.2s;
         }
@@ -64,12 +66,12 @@
 
         .profile-image {
             flex-shrink: 0;
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             overflow: hidden;
             border: 4px solid #fdbb4d;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
         }
 
         .profile-image img {
@@ -84,18 +86,23 @@
 
         .profile-info h2 {
             border-left: 5px solid #fdbb4d;
-            padding-left: 15px;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
+            padding-left: 18px;
+            margin-bottom: 1.2rem;
+            font-size: 1.9rem;
             color: #1a2a6c;
+        }
+
+        .profile-info p {
+            margin-bottom: 0.6rem;
+            font-size: 1.05rem;
         }
 
         /* Cards e seções */
         .section-card {
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 1.8rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            padding: 2rem;
             margin-bottom: 2rem;
             transition: transform 0.2s;
         }
@@ -107,35 +114,86 @@
         h2 {
             color: #1a2a6c;
             border-left: 5px solid #fdbb4d;
-            padding-left: 15px;
+            padding-left: 18px;
             margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
+            font-weight: 600;
         }
 
         h3 {
             color: #b21f1f;
-            margin: 1rem 0 0.5rem;
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.4rem;
+        }
+
+        /* Grid para prêmios com imagens */
+        .prizes-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .prize-card {
+            flex: 1;
+            min-width: 250px;
+            background: #fff8f0;
+            border-radius: 20px;
+            padding: 1.2rem;
+            border-left: 6px solid #fdbb4d;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .prize-image {
+            width: 100%;
+            max-width: 200px;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .prize-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .prize-text {
+            width: 100%;
+        }
+
+        .prize-text strong {
+            font-size: 1.3rem;
+            color: #1a2a6c;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         /* Grade para imagens de viagem */
         .travel-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 1.8rem;
+            margin-top: 1.5rem;
         }
 
         .travel-item {
             background: #f1f3f5;
-            border-radius: 12px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
 
         .travel-item:hover {
             transform: scale(1.02);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
         }
 
         .travel-item img {
@@ -147,127 +205,73 @@
         }
 
         .travel-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
         .travel-caption {
             padding: 0.8rem;
             text-align: center;
-            font-size: 0.9rem;
             font-weight: 500;
             color: #1a2a6c;
             background: white;
         }
 
-        /* Estilos para Prêmios lado a lado */
-        .prizes-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: space-between;
-            margin-top: 1rem;
-        }
-        
-        .prize-card {
-            flex: 1;
-            min-width: 250px;
-            background: #f8f9fa;
-            border-radius: 16px;
-            padding: 1rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .prize-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-        }
-        
-        .prize-image {
-            width: 100%;
-            max-width: 200px;
-            height: 150px;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .prize-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-        
-        .prize-card:hover .prize-image img {
-            transform: scale(1.05);
-        }
-        
-        .prize-card strong {
-            color: #1a2a6c;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Estilo para Habilidades em Desenvolvimento com imagem */
-        .skill-with-image {
+        /* Habilidades em desenvolvimento com imagem */
+        .skill-with-img {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             align-items: center;
             margin-top: 1rem;
         }
-        
-        .skill-content {
+
+        .skill-text {
             flex: 2;
+            min-width: 200px;
         }
-        
+
         .skill-image {
             flex: 1;
-            min-width: 200px;
-            text-align: center;
+            min-width: 180px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
-        
+
         .skill-image img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .skill-image img:hover {
-            transform: scale(1.02);
+            display: block;
         }
 
         /* Contato */
         .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: space-between;
-            background: #e9ecef;
-            padding: 1rem;
-            border-radius: 12px;
-            margin-top: 1rem;
+            gap: 1.2rem;
+            justify-content: flex-start;
+            background: #eef2f6;
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin-top: 0.5rem;
         }
 
         .contact-item {
             flex: 1;
             min-width: 200px;
+            background: white;
+            padding: 0.8rem 1rem;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .contact-item strong {
             color: #1a2a6c;
             display: block;
+            margin-bottom: 0.3rem;
         }
 
-        /* Botões e links */
+        /* Badges e listas */
         a {
             color: #b21f1f;
             text-decoration: none;
@@ -283,15 +287,17 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
-            margin-top: 0.8rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .badge {
-            background: #e9ecef;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
+            background: #eef2f6;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
             font-size: 0.9rem;
             color: #1a2a6c;
+            font-weight: 500;
         }
 
         footer {
@@ -299,49 +305,38 @@
             padding: 2rem;
             background: #1a2a6c;
             color: white;
-            margin-top: 2rem;
-            border-radius: 20px 20px 0 0;
+            margin-top: 2.5rem;
+            border-radius: 30px 30px 0 0;
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
-            .section-card { padding: 1.2rem; }
-            h2 { font-size: 1.5rem; }
+            .section-card { padding: 1.5rem; }
+            h2 { font-size: 1.6rem; }
             .travel-grid { grid-template-columns: 1fr; }
             .contact-info { flex-direction: column; }
-            
             .profile-section {
                 flex-direction: column;
                 text-align: center;
             }
-            
             .profile-image {
-                width: 150px;
-                height: 150px;
+                width: 160px;
+                height: 160px;
             }
-            
             .profile-info h2 {
                 text-align: center;
             }
-            
             .prizes-container {
                 flex-direction: column;
-                align-items: center;
             }
-            
-            .prize-card {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .skill-with-image {
+            .skill-with-img {
                 flex-direction: column;
             }
-            
             .skill-image {
                 order: -1;
-                margin-bottom: 1rem;
+                max-width: 280px;
+                margin: 0 auto;
             }
         }
     </style>
@@ -351,166 +346,165 @@
 <header>
     <div class="container">
         <h1>Fernando Siqueira Genta Maragni</h1>
-        <p>Estudante de Ciencia da Computacao</p>
+        <p>Estudante de Ciência da Computação</p>
     </div>
 </header>
 
 <div class="container">
-    <!-- SECAO DE PERFIL COM IMAGEM -->
+    <!-- SEÇÃO DE PERFIL COM FOTO LADO A LADO -->
     <div class="profile-section">
         <div class="profile-image">
-            <img src="./Portifólio Profissional-Bootcamp 1_files/WhatsApp Image 2026-04-12 at 16.00.33.jpg" alt="Fernando Maragni">
+            <img src="./Portifólio Profissional-Bootcamp 1_files/WhatsApp Image 2026-04-12 at 16.00.33.jpeg" alt="Foto de Fernando Maragni">
         </div>
         <div class="profile-info">
-            <h2>Informacoes Pessoais</h2>
+            <h2>Informações Pessoais</h2>
             <p><strong>Nome completo:</strong> Fernando Siqueira Genta Maragni</p>
             <p><strong>Idade:</strong> 18 anos</p>
-            <p><strong>Localizacao:</strong> Brasilia, DF</p>
-            <p><strong>Objetivo profissional:</strong> Atuar na area de tecnologia, desenvolvimento de software, sites e jogos.</p>
+            <p><strong>Localização:</strong> Brasília, DF</p>
+            <p><strong>Objetivo profissional:</strong> Atuar na área de tecnologia, desenvolvimento de software, sites e jogos.</p>
         </div>
     </div>
 
-    <!-- Secao de Contato -->
+    <!-- Contato profissional -->
     <div class="section-card">
-        <h2>Informacoes profissionais</h2>
+        <h2>Informações profissionais</h2>
         <div class="contact-info">
             <div class="contact-item"><strong>Telefone</strong> (61) 99112-9932</div>
-            
             <div class="contact-item"><strong>E-mail</strong> <a href="mailto:maragnifernando@gmail.com">maragnifernando@gmail.com</a></div>
-            
             <div class="contact-item"><strong>E-mail institucional</strong> <a href="mailto:fernando.maragni@sempreceub.com">fernando.maragni@sempreceub.com</a></div>
-            
             <div class="contact-item"><strong>GitHub</strong> <a href="https://github.com/maragnifernando-create" target="_blank">maragnifernando-create</a></div>
-            
             <div class="contact-item"><strong>LinkedIn</strong> <a href="https://www.linkedin.com/in/fernando-maragni-21040b402" target="_blank">Fernando Maragni</a></div>
-            
         </div>
     </div>
 
     <!-- Sobre Mim -->
     <div class="section-card">
         <h2>Sobre Mim</h2>
-        <p>Sou muito interessado na area de tecnologia, em especial na criacao e no desenvolvimento de sites e jogos.</p>
-        <p>Gosto de matematica e de resolver problemas de exatas.</p>
-        <p>Gosto de assistir jogos de futebol e torneios de e-sports de jogos de estrategia e mobas.</p>
+        <p>Sou muito interessado na área de tecnologia, em especial na criação e no desenvolvimento de sites e jogos.</p>
+        <p>Gosto de matemática e de resolver problemas de exatas.</p>
+        <p>Gosto de assistir jogos de futebol e torneios de e-sports de jogos de estratégia e mobas.</p>
         <p>Como outros hobbies, gosto de tentar fazer 100% dos jogos que estou interessado em jogar.</p>
     </div>
 
-    <!-- Curriculo (Resumo + Formacao + Competencias) -->
+    <!-- Currículo (Resumo + Formação + Competências) -->
     <div class="section-card">
-        <h2>Curriculo</h2>
-        <p><strong>Resumo:</strong> Estudante do Primeiro Semestre de Ciencia da Computacao, com interesse na criacao de sites e jogos. Estou fazendo minha primeira graduacao.</p>
+        <h2>Currículo</h2>
+        <p><strong>Resumo:</strong> Estudante do Primeiro Semestre de Ciência da Computação, com interesse na criação de sites e jogos. Estou fazendo minha primeira graduação.</p>
         
-        <h3>Formacao Academica</h3>
-        <p><strong>Colegio Ciman Octogonal</strong> – Ensino Medio (2023-2025)<br>
-        Estudei no Colegio Ciman quase a vida toda, tendo iniciado o Ensino Medio em 2023 e terminado em 2025.</p>
-        <p><strong>Cooplem Idiomas</strong> – Ingles (2019-2024)<br>
-        Curso completo de ingles, focado em conversacao e leitura.</p>
+        <h3>Formação Acadêmica</h3>
+        <p><strong>Colégio Ciman Octogonal</strong> – Ensino Médio (2023-2025)<br>
+        Estudei no Colégio Ciman quase a vida toda, tendo iniciado o Ensino Médio em 2023 e terminado em 2025.</p>
+        <p><strong>Cooplem Idiomas</strong> – Inglês (2019-2024)<br>
+        Curso completo de inglês, focado em conversação e leitura.</p>
         
-        <h3>Competencias</h3>
+        <h3>Competências</h3>
         <div class="badge-list">
             <span class="badge">Trabalho em equipe</span>
-            <span class="badge">Comunicacao</span>
-            <span class="badge">Python (Basico)</span>
-            <span class="badge">C# (Basico)</span>
+            <span class="badge">Comunicação</span>
+            <span class="badge">Python (Básico)</span>
+            <span class="badge">C# (Básico)</span>
             <span class="badge">Proatividade</span>
             <span class="badge">Desejo de aprender</span>
         </div>
         
         <h3>Idiomas</h3>
         <div class="badge-list">
-            <span class="badge">Portugues (Nativo)</span>
-            <span class="badge">Ingles (Avancado)</span>
-            <span class="badge">Alemao (Basico)</span>
+            <span class="badge">Português (Nativo)</span>
+            <span class="badge">Inglês (Avançado)</span>
+            <span class="badge">Alemão (Básico)</span>
         </div>
     </div>
 
-    <!-- Premios e Reconhecimentos COM IMAGENS lado a lado -->
+    <!-- Prêmios e Reconhecimentos com imagens lado a lado -->
     <div class="section-card">
-        <h2>Premios</h2>
+        <h2>Prêmios</h2>
         <div class="prizes-container">
-            <!-- Medalha de Prata + Imagem unnamed(1) e unnamed(2) -->
+            <!-- Medalha de Prata + imagens unnamed(1) e unnamed(2) -->
             <div class="prize-card">
                 <div class="prize-image">
-                    <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(1).jpg" alt="Medalha de Prata">
+                    <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(1).jpg" alt="Medalha de Prata - Imagem 1">
                 </div>
-                <div class="prize-image" style="margin-top: 0.5rem;">
-                    <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(2).jpg" alt="Medalha de Prata 2">
+                <div class="prize-image">
+                    <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(2).jpg" alt="Medalha de Prata - Imagem 2">
                 </div>
-                <strong>Medalha de Prata</strong>
-                <p>Olimpiada Brasileira de Astronomia e Astronautica - 2022</p>
+                <div class="prize-text">
+                    <strong>Medalha de Prata</strong>
+                    <p>Olimpíada Brasileira de Astronomia e Astronáutica - 2022</p>
+                </div>
             </div>
-            
-            <!-- Medalha de Bronze + Imagem unnamed(3) -->
+
+            <!-- Medalha de Bronze + imagem unnamed(3) -->
             <div class="prize-card">
                 <div class="prize-image">
                     <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(3).jpg" alt="Medalha de Bronze">
                 </div>
-                <strong>Medalha de Bronze</strong>
-                <p>Olimpiada Brasileira do Saber - 2025</p>
+                <div class="prize-text">
+                    <strong>Medalha de Bronze</strong>
+                    <p>Olimpíada Brasileira do Saber - 2025</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Viagens – GRID com imagens uma ao lado da outra -->
+    <!-- Viagens – Grid de imagens -->
     <div class="section-card">
         <h2>Viagens</h2>
-        <p><strong>Experiencias pessoais:</strong></p>
-        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <p><strong>Experiências pessoais:</strong></p>
+        <ul style="margin-left: 1.5rem; margin-bottom: 1.8rem;">
             <li>Quatro viagens aos EUA (Los Angeles, Las Vegas, Miami, Orlando)</li>
-            <li>Jogos de basquete, futebol americano, hoquei</li>
-            <li>Parques Universal e Disney, Observatorio Griffith, California Science Center</li>
-            <li>Jogos de futebol ao vivo: selecao brasileira, Palmeiras, Copa 2014</li>
-            <li>Laboratorios cientificos no ensino medio (disseccao de lula, etc.)</li>
+            <li>Jogos de basquete, futebol americano, hóquei</li>
+            <li>Parques Universal e Disney, Observatório Griffith, California Science Center</li>
+            <li>Jogos de futebol ao vivo: seleção brasileira, Palmeiras, Copa 2014</li>
+            <li>Laboratórios científicos no ensino médio (dissecação de lula, etc.)</li>
         </ul>
         <p><strong>Fotos:</strong></p>
         <div class="travel-grid">
             <div class="travel-item">
-                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(5).jpg" alt="Viagem 1">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(5).jpg" alt="Museu de Carros 1">
                 <div class="travel-caption">Museu de Carros</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(6).jpg" alt="Viagem 2">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(6).jpg" alt="Museu de Carros 2">
                 <div class="travel-caption">Museu de Carros</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(7).jpg" alt="Viagem 3">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(7).jpg" alt="Museu de Carros 3">
                 <div class="travel-caption">Museu de Carros</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(8).jpg" alt="Viagem 4">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(8).jpg" alt="Jogo de Basquete">
                 <div class="travel-caption">Jogo de Basquete</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(9).jpg" alt="Viagem 5">
-                <div class="travel-caption">Observatorio Griffith</div>
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(9).jpg" alt="Observatório Griffith">
+                <div class="travel-caption">Observatório Griffith</div>
             </div>
             <div class="travel-item">
-                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(10).jpg" alt="Viagem 6">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(10).jpg" alt="California Science Center">
                 <div class="travel-caption">California Science Center</div>
             </div>
         </div>
     </div>
 
-    <!-- Habilidades em Desenvolvimento COM IMAGEM unnamed(4) -->
+    <!-- Habilidades em Desenvolvimento com imagem unnamed(4) ao lado -->
     <div class="section-card">
         <h2>Habilidades em Desenvolvimento</h2>
-        <div class="skill-with-image">
-            <div class="skill-content">
-                <p>Estou aprendendo a programar em Python na materia de logica de programacao e tentando aprender sozinho a programar em C#.</p>
-                <p>Além de aprender a falar alemao no Duolingo.</p>
-                <p>Quero tambem futuramente aprender a usar Blender, Unity e aprender a programar em C++.</p>
+        <div class="skill-with-img">
+            <div class="skill-text">
+                <p>Estou aprendendo a programar em Python na matéria de lógica de programação e tentando aprender sozinho a programar em C#.</p>
+                <p>Além de aprender a falar alemão no Duolingo.</p>
+                <p>Quero também futuramente aprender a usar Blender, Unity e aprender a programar em C++.</p>
             </div>
             <div class="skill-image">
-                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(4).jpg" alt="Habilidades em Desenvolvimento">
+                <img src="./Portifólio Profissional-Bootcamp 1_files/unnamed(4).jpg" alt="Habilidades em desenvolvimento">
             </div>
         </div>
     </div>
 </div>
 
 <footer>
-    <p>Portfolio Profissional - Fernando Maragni | Bootcamp de Desenvolvimento</p>
-    <p>© 2025 - Atualizado com organizacao profissional</p>
+    <p>Portfólio Profissional - Fernando Maragni | Bootcamp de Desenvolvimento</p>
+    <p>2025 - Atualizado com organização profissional</p>
 </footer>
 
 </body>
