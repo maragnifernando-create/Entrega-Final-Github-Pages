@@ -13,13 +13,13 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            color: #222;
+            background-color: #f5f7fa;
+            color: #1a2a3a;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 1.5rem;
         }
@@ -29,7 +29,7 @@
             text-align: center;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid #ddd;
+            border-bottom: 3px solid #fdbb4d;
         }
 
         .header h1 {
@@ -40,151 +40,83 @@
 
         .header p {
             font-size: 1.1rem;
-            color: #666;
+            color: #b21f1f;
+            font-weight: 500;
         }
 
-        /* Seções */
-        .section {
+        /* Cards */
+        .card {
             background: white;
             border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1.8rem;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e9ecef;
         }
 
-        .section h2 {
+        .card h2 {
             color: #1a2a6c;
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            padding-bottom: 0.3rem;
+            padding-bottom: 0.5rem;
             border-bottom: 2px solid #fdbb4d;
             display: inline-block;
         }
 
-        .section h3 {
+        .card h3 {
             color: #b21f1f;
             font-size: 1.2rem;
             margin: 1rem 0 0.5rem 0;
         }
 
-        /* Perfil com imagem */
-        .profile-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: flex-start;
-        }
-
-        .profile-image {
-            flex-shrink: 0;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid #fdbb4d;
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-details {
-            flex: 1;
-        }
-
-        .profile-details p {
-            margin-bottom: 0.4rem;
-        }
-
-        /* Lista de informações profissionais */
-        .info-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .info-list li {
-            margin-bottom: 0.8rem;
-            padding-left: 0;
-        }
-
-        .info-list li strong {
-            display: inline-block;
-            min-width: 140px;
-            color: #1a2a6c;
-        }
-
-        .info-list a {
-            color: #b21f1f;
-            text-decoration: none;
-        }
-
-        .info-list a:hover {
-            text-decoration: underline;
-        }
-
-        /* Listas padrão */
-        .custom-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .custom-list li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.2rem;
-            position: relative;
-        }
-
-        .custom-list li::before {
-            content: "•";
-            color: #b21f1f;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Competências e idiomas em badges */
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
+        /* Informações profissionais - grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
             margin-top: 0.5rem;
         }
 
-        .badge {
-            background: #e9ecef;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
+        .info-item {
+            background: #f8f9fa;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border-left: 3px solid #fdbb4d;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #1a2a6c;
             font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-item a, .info-item span {
             color: #333;
+            text-decoration: none;
+            font-size: 0.95rem;
+            word-break: break-all;
         }
 
-        /* Prêmios */
-        .prize-item {
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .prize-item strong {
+        .info-item a:hover {
             color: #b21f1f;
-            font-size: 1rem;
+            text-decoration: underline;
         }
 
-        .certificates-list {
-            margin-top: 1rem;
+        /* Listas */
+        .list {
             list-style: none;
             padding-left: 0;
         }
 
-        .certificates-list li {
-            margin-bottom: 0.3rem;
+        .list li {
+            padding: 0.3rem 0;
             padding-left: 1.2rem;
             position: relative;
         }
 
-        .certificates-list li::before {
+        .list li::before {
             content: "•";
             color: #fdbb4d;
             font-weight: bold;
@@ -192,19 +124,50 @@
             left: 0;
         }
 
-        /* Grid de viagens */
+        /* Badges / Competências */
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 0.8rem 0;
+        }
+
+        .badge {
+            background: #e9ecef;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #1a2a6c;
+        }
+
+        /* Prêmios */
+        .prize-list {
+            list-style: none;
+        }
+
+        .prize-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #e9ecef;
+        }
+
+        .prize-list li strong {
+            color: #b21f1f;
+        }
+
+        /* Grade de viagens */
         .travel-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 1rem;
             margin-top: 1.2rem;
         }
 
         .travel-card {
             background: #f8f9fa;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             text-align: center;
+            border: 1px solid #e9ecef;
         }
 
         .travel-card img {
@@ -217,122 +180,94 @@
         .travel-caption {
             padding: 0.6rem;
             font-size: 0.85rem;
-            background: white;
             font-weight: 500;
+            background: white;
         }
 
-        /* Habilidades em desenvolvimento - duas colunas */
-        .skills-wrapper {
+        /* Duolingo stats */
+        .duolingo-stats {
+            background: #f0f7ea;
+            padding: 1rem;
+            border-radius: 12px;
+            margin-top: 1rem;
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .skills-text {
-            flex: 1.5;
-            min-width: 200px;
-        }
-
-        .duolingo-stats {
-            flex: 1;
-            min-width: 220px;
-            background: #f0f2f5;
-            border-radius: 16px;
-            padding: 1rem;
+            gap: 1.5rem;
+            justify-content: space-around;
             text-align: center;
         }
 
-        .duolingo-stats h4 {
-            color: #1a2a6c;
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
+        .stat {
+            flex: 1;
+            min-width: 100px;
         }
 
         .stat-number {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #58cc71;
         }
 
         .stat-label {
-            font-size: 0.85rem;
-            color: #666;
+            font-size: 0.8rem;
+            color: #555;
         }
 
-        .stat-row {
-            margin: 0.8rem 0;
-            padding: 0.5rem;
-            border-bottom: 1px solid #ddd;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
             padding: 1.5rem;
-            color: #888;
+            color: #666;
             font-size: 0.85rem;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #e9ecef;
             margin-top: 1rem;
         }
 
-        @media (max-width: 700px) {
-            .container {
-                padding: 1rem;
-            }
-            .profile-wrapper {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .info-list li strong {
-                display: block;
-                min-width: auto;
-            }
-            .skills-wrapper {
-                flex-direction: column;
-            }
+        hr {
+            margin: 1rem 0;
+            border: none;
+            border-top: 1px solid #e9ecef;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    
-    <!-- Header -->
+
+    <!-- HEADER -->
     <div class="header">
         <h1>Fernando Siqueira Genta Maragni</h1>
         <p>Estudante de Ciência da Computação</p>
     </div>
 
-    <!-- Perfil com imagem -->
-    <div class="section">
-        <div class="profile-wrapper">
-            <div class="profile-image">
-                <img src="Portifólio Profissional-Bootcamp 1_files/foto-perfil.jpg" alt="Fernando Maragni">
+    <!-- INFORMAÇÕES PROFISSIONAIS -->
+    <div class="card">
+        <h2>Informações profissionais</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <strong>Telefone</strong>
+                <span>(61) 99112-9932</span>
             </div>
-            <div class="profile-details">
-                <p><strong>Nome completo:</strong> Fernando Siqueira Genta Maragni</p>
-                <p><strong>Idade:</strong> 18 anos</p>
-                <p><strong>Localização:</strong> Brasília, DF</p>
-                <p><strong>Objetivo profissional:</strong> Atuar na área de tecnologia, desenvolvimento de software, sites e jogos.</p>
+            <div class="info-item">
+                <strong>E-mail</strong>
+                <a href="mailto:maragnifernando@gmail.com">maragnifernando@gmail.com</a>
+            </div>
+            <div class="info-item">
+                <strong>E-mail institucional</strong>
+                <a href="mailto:fernando.maragni@sempreceub.com">fernando.maragni@sempreceub.com</a>
+            </div>
+            <div class="info-item">
+                <strong>GitHub</strong>
+                <a href="https://github.com/maragnifernando-create" target="_blank">maragnifernando-create</a>
+            </div>
+            <div class="info-item">
+                <strong>LinkedIn</strong>
+                <a href="https://www.linkedin.com/in/fernando-maragni-21040b402" target="_blank">Fernando Maragni</a>
             </div>
         </div>
     </div>
 
-    <!-- Informações profissionais -->
-    <div class="section">
-        <h2>Informações profissionais</h2>
-        <ul class="info-list">
-            <li><strong>Telefone</strong> <a href="tel:+5561991129932">(61) 99112-9932</a></li>
-            <li><strong>E-mail</strong> <a href="mailto:maragnifernando@gmail.com">maragnifernando@gmail.com</a></li>
-            <li><strong>E-mail institucional</strong> <a href="mailto:fernando.maragni@sempreceub.com">fernando.maragni@sempreceub.com</a></li>
-            <li><strong>GitHub</strong> <a href="https://github.com/maragnifernando-create" target="_blank">maragnifernando-create</a></li>
-            <li><strong>LinkedIn</strong> <a href="https://www.linkedin.com/in/fernando-maragni-21040b402" target="_blank">Fernando Maragni</a></li>
-        </ul>
-    </div>
-
-    <!-- Sobre Mim -->
-    <div class="section">
+    <!-- SOBRE MIM -->
+    <div class="card">
         <h2>Sobre Mim</h2>
         <p>Sou muito interessado na área de tecnologia, em especial na criação e no desenvolvimento de sites e jogos.</p>
         <p>Gosto de matemática e de resolver problemas de exatas.</p>
@@ -340,19 +275,19 @@
         <p>Como outros hobbies, gosto de tentar fazer 100% dos jogos que estou interessado em jogar.</p>
     </div>
 
-    <!-- Currículo -->
-    <div class="section">
+    <!-- CURRÍCULO -->
+    <div class="card">
         <h2>Currículo</h2>
         <p><strong>Resumo:</strong> Estudante do Primeiro Semestre de Ciência da Computação, com interesse na criação de sites e jogos. Estou fazendo minha primeira graduação.</p>
-        
+
         <h3>Formação Acadêmica</h3>
-        <ul class="custom-list">
+        <ul class="list">
             <li><strong>Colégio Ciman Octogonal</strong> – Ensino Médio (2023-2025)<br>Estudei no Colégio Ciman quase a vida toda, tendo iniciado o Ensino Médio em 2023 e terminado em 2025.</li>
             <li><strong>Cooplem Idiomas</strong> – Inglês (2019-2024)<br>Curso completo de inglês, focado em conversação e leitura.</li>
         </ul>
-        
+
         <h3>Competências</h3>
-        <div class="badge-container">
+        <div class="badge-list">
             <span class="badge">Trabalho em equipe</span>
             <span class="badge">Comunicação</span>
             <span class="badge">Python (Básico)</span>
@@ -360,40 +295,29 @@
             <span class="badge">Proatividade</span>
             <span class="badge">Desejo de aprender</span>
         </div>
-        
+
         <h3>Idiomas</h3>
-        <div class="badge-container">
+        <div class="badge-list">
             <span class="badge">Português (Nativo)</span>
             <span class="badge">Inglês (Avançado)</span>
             <span class="badge">Alemão (Básico)</span>
         </div>
     </div>
 
-    <!-- Prêmios -->
-    <div class="section">
+    <!-- PRÊMIOS -->
+    <div class="card">
         <h2>Prêmios</h2>
-        <div class="prize-item">
-            <strong>Medalha de Prata</strong><br>
-            Olimpíada Brasileira de Astronomia e Astronáutica - 2022
-        </div>
-        <div class="prize-item">
-            <strong>Medalha de Bronze</strong><br>
-            Olimpíada Brasileira do Saber - 2025
-        </div>
-        
-        <h3>Certificados e Medalhas</h3>
-        <ul class="certificates-list">
-            <li>Certificado Medalha de Prata - OBA 2022</li>
-            <li>Medalha XXV OBA 2022</li>
-            <li>Medalha de Bronze - OBS 2025</li>
+        <ul class="prize-list">
+            <li><strong>Medalha de Prata</strong><br>Olimpíada Brasileira de Astronomia e Astronáutica - 2022</li>
+            <li><strong>Medalha de Bronze</strong><br>Olimpíada Brasileira do Saber - 2025</li>
         </ul>
     </div>
 
-    <!-- Viagens -->
-    <div class="section">
+    <!-- VIAGENS -->
+    <div class="card">
         <h2>Viagens</h2>
         <p><strong>Experiências pessoais:</strong></p>
-        <ul class="custom-list">
+        <ul class="list">
             <li>Quatro viagens aos EUA (Los Angeles, Las Vegas, Miami, Orlando)</li>
             <li>Jogos de basquete, futebol americano, hóquei</li>
             <li>Parques Universal e Disney, Observatório Griffith, California Science Center</li>
@@ -404,65 +328,55 @@
         <p><strong>Fotos:</strong></p>
         <div class="travel-grid">
             <div class="travel-card">
-                <img src="Portifólio Profissional-Bootcamp 1_files/viagem10.jpg" alt="Museu de Carros">
-                <div class="travel-caption">Museu de Carros</div>
-            </div>
-            <div class="travel-card">
                 <img src="Portifólio Profissional-Bootcamp 1_files/viagem5.jpg" alt="Museu de Carros">
                 <div class="travel-caption">Museu de Carros</div>
             </div>
             <div class="travel-card">
-                <img src="Portifólio Profissional-Bootcamp 1_files/viagem6.jpg" alt="Porsche RS Spyder">
+                <img src="Portifólio Profissional-Bootcamp 1_files/viagem6.jpg" alt="Museu de Carros">
+                <div class="travel-caption">Museu de Carros</div>
+            </div>
+            <div class="travel-card">
+                <img src="Portifólio Profissional-Bootcamp 1_files/viagem7.jpg" alt="Porsche RS Spyder">
                 <div class="travel-caption">Porsche RS Spyder - Museu</div>
             </div>
             <div class="travel-card">
-                <img src="Portifólio Profissional-Bootcamp 1_files/viagem7.jpg" alt="Jogo de Basquete">
+                <img src="Portifólio Profissional-Bootcamp 1_files/viagem8.jpg" alt="Jogo de Basquete">
                 <div class="travel-caption">Jogo de Basquete</div>
             </div>
             <div class="travel-card">
-                <img src="Portifólio Profissional-Bootcamp 1_files/viagem8.jpg" alt="Observatório Griffith">
+                <img src="Portifólio Profissional-Bootcamp 1_files/viagem9.jpg" alt="Observatório Griffith">
                 <div class="travel-caption">Observatório Griffith</div>
             </div>
             <div class="travel-card">
-                <img src="Portifólio Profissional-Bootcamp 1_files/viagem9.jpg" alt="California Science Center">
+                <img src="Portifólio Profissional-Bootcamp 1_files/viagem10.jpg" alt="California Science Center">
                 <div class="travel-caption">California Science Center</div>
             </div>
         </div>
     </div>
 
-    <!-- Habilidades em Desenvolvimento + Duolingo Stats -->
-    <div class="section">
+    <!-- HABILIDADES EM DESENVOLVIMENTO + DUOLINGO -->
+    <div class="card">
         <h2>Habilidades em Desenvolvimento</h2>
-        <div class="skills-wrapper">
-            <div class="skills-text">
-                <p>Estou aprendendo a programar em Python na matéria de lógica de programação e tentando aprender sozinho a programar em C#.</p>
-                <p>Além de aprender a falar alemão no Duolingo.</p>
-                <p>Quero também futuramente aprender a usar Blender, Unity e aprender a programar em C++.</p>
+        <p>Estou aprendendo a programar em Python na matéria de lógica de programação e tentando aprender sozinho a programar em C#.</p>
+        <p>Além de aprender a falar alemão no Duolingo.</p>
+        <p>Quero também futuramente aprender a usar Blender, Unity e aprender a programar em C++.</p>
+
+        <h3>Aprendizado de Alemão - Duolingo</h3>
+        <div class="duolingo-stats">
+            <div class="stat">
+                <div class="stat-number">307</div>
+                <div class="stat-label">dias de sequência</div>
             </div>
-            <div class="duolingo-stats">
-                <h4>Aprendizado de Alemão - Duolingo</h4>
-                <div class="stat-row">
-                    <div class="stat-number">307</div>
-                    <div class="stat-label">dias de sequência consecutiva</div>
-                </div>
-                <div class="stat-row">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">cursos em andamento</div>
-                </div>
-                <div class="stat-row">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">seguidores na plataforma</div>
-                </div>
-                <div class="stat-row">
-                    <div class="stat-label">Membro desde <strong>2025</strong></div>
-                </div>
-                <div style="margin-top: 0.8rem; padding-top: 0.5rem; border-top: 1px solid #ccc;">
-                    <div class="stat-label">VISÃO GERAL</div>
-                    <div>🔥 307 dias</div>
-                    <div>🎮 12</div>
-                </div>
+            <div class="stat">
+                <div class="stat-number">3</div>
+                <div class="stat-label">cursos em andamento</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">4</div>
+                <div class="stat-label">seguidores</div>
             </div>
         </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Membro desde 2025</p>
     </div>
 
 </div>
@@ -473,4 +387,5 @@
 </footer>
 
 </body>
+</html>
 </html>
