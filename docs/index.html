@@ -100,6 +100,32 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Seção do PDF */
+        .pdf-box {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #f0f4f8;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px dashed #1a2a6c;
+            margin-top: 0.5rem;
+        }
+
+        .pdf-link {
+            color: #1a2a6c;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pdf-link:hover {
+            color: #b21f1f;
+            text-decoration: underline;
+        }
+
         /* Informações profissionais - grid */
         .info-grid {
             display: grid;
@@ -277,6 +303,12 @@
             margin-top: 1rem;
         }
 
+        .ai-message {
+            margin-top: 0.5rem;
+            font-weight: 500;
+            color: #4a5568;
+        }
+
         @media (max-width: 700px) {
             .profile-section {
                 flex-direction: column;
@@ -292,13 +324,11 @@
 
 <div class="container">
 
-    <!-- HEADER -->
     <div class="header">
         <h1>Fernando Siqueira Genta Maragni</h1>
         <p>Estudante de Ciência da Computação</p>
     </div>
 
-    <!-- PERFIL COM FOTO -->
     <div class="card">
         <h2>Perfil Pessoal</h2>
         <div class="profile-section">
@@ -314,7 +344,17 @@
         </div>
     </div>
 
-    <!-- INFORMAÇÕES PROFISSIONAIS -->
+    <div class="card">
+        <h2>Plano de Implementação do portifólioHUB + IA Google Gemini 3.5 Flash</h2>
+        <p>Confira o plano detalhado de desenvolvimento do projeto e a integração com recursos de inteligência artificial:</p>
+        <div class="pdf-box">
+            <span>📄</span>
+            <a class="pdf-link" href="Plano de implementação - Entrega Final Bootcamp 1.pdf" target="_blank">
+                Clique aqui para abrir ou baixar o Plano de Implementação (PDF)
+            </a>
+        </div>
+    </div>
+
     <div class="card">
         <h2>Informações profissionais</h2>
         <div class="info-grid">
@@ -341,7 +381,6 @@
         </div>
     </div>
 
-    <!-- SOBRE MIM -->
     <div class="card">
         <h2>Sobre Mim</h2>
         <p>Sou muito interessado na área de tecnologia, em especial na criação e no desenvolvimento de sites e jogos.</p>
@@ -350,7 +389,6 @@
         <p>Como outros hobbies, gosto de tentar fazer 100% dos jogos que estou interessado em jogar.</p>
     </div>
 
-    <!-- CURRÍCULO -->
     <div class="card">
         <h2>Currículo</h2>
         <p><strong>Resumo:</strong> Estudante do Primeiro Semestre de Ciência da Computação, com interesse na criação de sites e jogos. Estou fazendo minha primeira graduação.</p>
@@ -379,7 +417,6 @@
         </div>
     </div>
 
-    <!-- PRÊMIOS COM FOTOS -->
     <div class="card">
         <h2>Prêmios</h2>
         <div class="prizes-wrapper">
@@ -401,7 +438,6 @@
         </div>
     </div>
 
-    <!-- VIAGENS -->
     <div class="card">
         <h2>Viagens</h2>
         <p><strong>Experiências pessoais:</strong></p>
@@ -442,7 +478,6 @@
         </div>
     </div>
 
-    <!-- HABILIDADES EM DESENVOLVIMENTO + DUOLINGO -->
     <div class="card">
         <h2>Habilidades em Desenvolvimento</h2>
         <p>Estou aprendendo a programar em Python na matéria de lógica de programação e tentando aprender sozinho a programar em C e em mecher em html.</p>
@@ -472,6 +507,7 @@
 <footer>
     <p>Portfólio Profissional - Fernando Maragni | Bootcamp de Desenvolvimento</p>
     <p>2025</p>
+    <p class="ai-message">Material produzido com o apoio da IA generativa Google Gemini 3.5 Flash</p>
 </footer>
 
 </body>
